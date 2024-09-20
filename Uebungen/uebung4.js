@@ -47,8 +47,32 @@ const array = (...numbers) => {
 };
 console.log(array(...numbers));
 
-
 //BEISPIEL-5
+const readlineSync = require("readline-sync");
+// const alterBerechnen = () => {
+//   const alter = readlineSync.question("Alter eingeben:");
+//   let berechnen = new Date().getFullYear() - alter;
+//   return berechnen;
+// };
+//! 2. Weg
+const alter = readlineSync.question("Alter eingeben:");
+const alterBerechnen = (alter) => {
+  let berechnen = new Date().getFullYear() - alter;
+  return berechnen;
+};
+console.log(alterBerechnen(alter));
 
+//BEISPIEL-6
 
+//! Task-1
 
+const isInRange = (nummer, min, max) => {
+  return nummer >= min && nummer <= max;
+};
+
+console.log("=========Task-1=========");
+const nummer = parseFloat(readlineSync.question('Enter a number: '));
+const min = parseFloat(readlineSync.question('Enter the minimum value: '));
+const max = parseFloat(readlineSync.question('Enter the maximum value: '));
+
+console.log(isInRange(nummer, min, max));
