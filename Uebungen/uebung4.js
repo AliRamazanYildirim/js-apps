@@ -76,3 +76,11 @@ const min = parseFloat(readlineSync.question('Enter the minimum value: '));
 const max = parseFloat(readlineSync.question('Enter the maximum value: '));
 
 console.log(isInRange(nummer, min, max));
+
+//! Task-2 
+const endsWithIng = (string) => {
+  return string.toLowerCase().endsWith("ing");
+};
+const string = readlineSync.question("Stringwert eingeben:");
+console.log("=========Task-2=========");
+console.log(endsWithIng(string)); // false
