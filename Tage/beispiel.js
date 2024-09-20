@@ -107,7 +107,6 @@ const geburtDatum = "2004";
 const matheNote1 = 70;
 const matheNote2 = 70;
 const matheNote3 = 80;
-console.log(geburtDatum - matheNote1);
 
 let matheDurchschnitt = (matheNote1 + matheNote2 + matheNote3) / 3;
 console.log(parseFloat(matheDurchschnitt));
