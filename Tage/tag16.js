@@ -124,6 +124,6 @@ const c = { ...a, ...b };
 console.log(c);
 
 //BEISPIEL-8
-let x=2;
-x=x++ * ++x;
+let x = 2;
+x = x++ * ++x;
 console.log(x);
