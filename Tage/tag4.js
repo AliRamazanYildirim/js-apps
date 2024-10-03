@@ -12,7 +12,7 @@ if (temp > 20 && isSunShining) {
   console.log("Die Sonne scheint");
 } else console.log("Das Wetter ist schlecht");
 
-//! BEISPIEL-1
+// BEISPIEL-1
 
 let esRegnet = false;
 
@@ -20,7 +20,7 @@ if (temp > 25 || esRegnet) {
   console.log("Es ist warm oder es regnet");
 } else console.log("Es regnet nicht");
 
-//! BEISPIEL-2
+// BEISPIEL-2
 
 let a = true;
 let b = 7;
@@ -36,7 +36,7 @@ if ((a || b > 5) && isRichtig && isExst) {
   } else console.log("false");
 
 
-//! BEISPIEL-3
+// BEISPIEL-3
 
 let tag=7;
 
@@ -66,7 +66,7 @@ switch (tag) {
       console.log("Ungültiger Tag");
 }
 
-//! BEISPIEL-4
+// BEISPIEL-4
 
 const readline = require('readline-sync');
 
