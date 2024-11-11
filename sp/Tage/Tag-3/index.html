@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- BEISPIEL-1: click-->
+    <button id="myButton">Click me</button>
+
+    <!-- BEISPIEL-2: mouseenter mouseleave -->
+    <!-- mouseenter vs. mouseover -->
+    <!-- mouseenter => Es wird NUR einmal ausgelöst, wenn die Maus das Div betritt. -->
+    <!-- mouseover => Es wird ausgelöst, wenn die Maus das Div und dessen Kind betritt. -->
+
+    <div id="myDiv1">
+      I am parent
+      <p>Hey</p>
+    </div>
+
+    <!-- BEISPIEL-3: keydown - keyup -->
+    <input type="text" id="myInput" />
+
+    <!-- BEISPIEL-4: resize -->
+    <h1 id="test">Welcome</h1>
+
+    <!-- BEISPIEL-5: Add & Remove eventListener -->
+    <button id="myButton1">Click here!</button>
+
+    <!-- BEISPIEL-5.1: removeEventListener -->
+    <button id="myButton2">Order</button>
+
+    <!-- BEISPIEL-6: DOMContentLoaded -->
+    <h3 id="myD">Waiting...</h3>
+
+    <!-- BEISPIEL-7: event -->
+    <button id="myButton3">Click me</button>
+
+    <!-- BEISPIEL-8: form -->
+    <form id="myForm">
+      <input type="text" id="myName" name="fullName">
+      <input type="email" id="myEmail" name="email">
+      <input type="submit">
+    </form>
+
+    <script src="app.js"></script>
+  </body>
+</html>
