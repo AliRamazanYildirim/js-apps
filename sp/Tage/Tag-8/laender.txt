@@ -1,0 +1,11 @@
+[
+    {"name": "Türkei"},
+    {"name": "Germany"},
+    {"name": "Canada"},
+    {"name": "Brazil"},
+    {"name": "France"},
+    {"name": "Japan"},
+    {"name": "Sweden"},
+    {"name": "Norway"},
+    {"name": "India"}
+]
