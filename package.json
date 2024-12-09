@@ -1,15 +1,17 @@
 {
   "dependencies": {
     "axios": "^1.7.7",
-    "readline-sync": "^1.4.10"
+    "react-spinners": "^0.15.0",
+    "readline-sync": "^1.4.10",
+    "spinners": "^1.2.2"
   },
   "name": "js-console-apps",
   "version": "1.0.0",
   "main": "sp/Tage/Tag-7/app.js",
- "scripts": {
-  "start": "node sp/Tage/Tag-7/app.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+  "scripts": {
+    "start": "node sp/Tage/Tag-7/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [],
   "type": "module",
   "author": "",
