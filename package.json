@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@jridgewell/gen-mapping": "^0.3.6",
     "axios": "^1.7.7",
     "react-spinners": "^0.15.0",
