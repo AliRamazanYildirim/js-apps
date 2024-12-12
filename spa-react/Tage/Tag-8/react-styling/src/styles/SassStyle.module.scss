@@ -1,0 +1,32 @@
+.container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.title {
+  color: #333;
+  font-size: 24px;
+  &:hover {
+    color: #007bff;
+  }
+}
+
+.description {
+  color: #666;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  &:hover {
+    background-color: #0056b3;
+  }
+}

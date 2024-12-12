@@ -3,8 +3,11 @@
     "@formspree/react": "^2.5.1",
     "@jridgewell/gen-mapping": "^0.3.6",
     "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "react-bootstrap": "^2.10.6",
     "react-spinners": "^0.15.0",
     "readline-sync": "^1.4.10",
+    "sass": "^1.82.0",
     "spinners": "^1.2.2"
   },
   "name": "js-console-apps",
@@ -12,6 +15,7 @@
   "main": "sp/Tage/Tag-7/app.js",
   "scripts": {
     "start": "node sp/Tage/Tag-7/app.js",
+    "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,6 +28,7 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.26.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "react-scripts": "^3.0.1",
     "vite": "^6.0.3"
   }
 }

@@ -1,0 +1,21 @@
+.my-style{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: yellow;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px grey;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    transition: all 0.5s;
+}
