@@ -24,6 +24,7 @@ export default [
       'react-refresh': reactRefresh,
       'react-recommended': react,
     },
+    extends: ['plugin:react/recommended'],
     rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,

@@ -8,7 +8,8 @@
     "react-spinners": "^0.15.0",
     "readline-sync": "^1.4.10",
     "sass": "^1.82.0",
-    "spinners": "^1.2.2"
+    "spinners": "^1.2.2",
+    "styled-components": "^6.1.13"
   },
   "name": "js-console-apps",
   "version": "1.0.0",
