@@ -5,7 +5,7 @@ import axios from 'axios';
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState("");
 
-  // Optimistik state ve updater fonksiyonu
+  // Optimistischer Zustand und Updater-Funktion
   const [todos, updateTodos] = useOptimistic([], (state, newItem) => {
     switch (newItem.type) {
       case "add":
@@ -22,16 +22,16 @@ const TodoList = () => {
   });
 
   const addTodoOptimistic = async () => {
-    const tempId = Date.now(); // Geçici ID
+    const tempId = Date.now(); // Vorläufige ID
     const optimisticTodo = { id: tempId, title: newTodo, completed: false };
 
-    // Optimistik güncellemeyi startTransition ile sar
+    // Optimistische Aktualisierung mit startTransition umwickeln
     startTransition(() => {
       updateTodos({ type: "add", todo: optimisticTodo });
     });
 
     try {
-      // Gerçek API isteği
+      // Echte API-Anfrage
       const response = await axios.post('https://jsonplaceholder.typicode.com/todos', optimisticTodo, {
         headers: {
           'Content-Type': 'application/json',
@@ -39,23 +39,23 @@ const TodoList = () => {
       });
 
       if (response.status === 201) {
-        // Gerçek ID ile optimistik öğeyi güncelle
+        // Optimistisches Element mit echter ID aktualisieren
         startTransition(() => {
           updateTodos({ type: "update", tempId, realId: response.data.id });
         });
       } else {
-        // Başarısız olursa optimistik güncellemeyi geri al
+        // Wenn es fehlschlägt, die optimistische Aktualisierung zurücknehmen
         startTransition(() => {
           updateTodos({ type: "rollback", tempId });
         });
       }
     } catch (error) {
-        console.error("Hata oluştu:", error.message);
+        console.error("Ein Fehler ist aufgetreten:", error.message);
         
-        // Kullanıcıya bir hata mesajı göster
-        alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+        // Zeige dem Benutzer eine Fehlermeldung an
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
       
-        // Hata durumunda optimistik güncellemeyi düşük öncelikli olarak geri al
+        // Im Fehlerfall die optimistische Aktualisierung mit niedriger Priorität zurücknehmen
         startTransition(() => {
           updateTodos({ type: "rollback", tempId });
         });
