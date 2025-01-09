@@ -1,15 +1,14 @@
-import './App.css'
-import ThemeSwitcher from './features/ThemeSwitcher'
+import useThemeStore from "./store/useThemeStore";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 function App() {
+  const { mode } = useThemeStore();
 
   return (
-    <>
-      <div>
-        <ThemeSwitcher />
-      </div>
-    </>
-  )
+    <div className={`app ${mode}`}>
+      <ThemeSwitcher />
+    </div>
+  );
 }
 
-export default App
+export default App;

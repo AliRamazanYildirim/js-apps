@@ -1,28 +1,29 @@
-import { useState } from 'react';
-import './App.css';
-import Cart from './components/Cart';
-import Header from './components/Header';
-import Login from './components/Login';
-import ProductList from './components/ProductList';
+import { useEffect } from 'react'
+import './App.css'
+import Cart from './components/Cart'
+import Header from './components/Header'
+import Login from './components/Login'
+import ProductList from './components/ProductList'
+import ThemeSwitcher from './components/ThemeSwitcher'
+import useThemeStore from './store/useThemeStore'
+
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const { mode } = useThemeStore();
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  useEffect(() => {
+    document.body.className = mode;
+  }, [mode]);
 
   return (
-    <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+    <div className={`app ${mode}`}>
       <Header />
-      <button onClick={toggleDarkMode}>
-        {darkMode ? 'Light Mode' : 'Dark Mode'}
-      </button>
       <Login />
       <ProductList />
       <Cart />
+      <ThemeSwitcher />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
