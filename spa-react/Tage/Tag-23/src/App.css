@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+/* 🌍 Allgemeines Layout */
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #fefae0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 📌 Hauptcontainer */
+.container {
+  background: #e9edc9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 25rem;
+  text-align: center;
+}
+
+/* 📝 Überschriften */
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 18px;
+  color: #444;
+  margin-top: 20px;
+}
+
+/* ✏️ Eingabebereich */
+.todo-input {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.todo-input input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* ➕ Hinzufügen-Button */
+.btn {
+  background-color: #03045e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* 📋 Aufgabenliste */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+/* ❌ Löschen-Button */
+.delete-btn {
+  background: #780000;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s;
+}
+
+.delete-btn:hover {
+  color: wheat;
+}
+
+/* 🎉 Keine Aufgaben vorhanden */
+.empty {
+  color: #888;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* 📏 Span-Abstände */
+span {
+  margin: 0 10px;
+}
