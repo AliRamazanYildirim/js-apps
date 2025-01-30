@@ -4,9 +4,11 @@ const useTodoStore = create((set, get) => ({
   todos: [],
   input: '',
   setInput: (value) => set(() => ({ input: value })),
-  addTodo: (text) => set((state) => ({
-    todos: [...state.todos, { id: Date.now(), text, completed: false }]
-  })),
+  addTodo: (text) => set((state) => {
+    const newTodo = { id: Date.now(), text, completed: false };
+    console.log('Neuer Todo hinzugefügt:', newTodo); // In die Konsole drucken
+    return { todos: [...state.todos, newTodo] };
+  }),
   toggleTodo: (id) => set((state) => ({
     todos: state.todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
