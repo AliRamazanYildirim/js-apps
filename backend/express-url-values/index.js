@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import logger from './middleware/logger.js';
 import cors from 'cors';
-import userRoutes from './routes/user.js';
+import userRoutes from './routes/user.route.js';
 import config from './config/config.js';
 import errorHandler from './middleware/errorHandler.js';
 
