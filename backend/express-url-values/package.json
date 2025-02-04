@@ -1,0 +1,21 @@
+{
+  "name": "express-url-values",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
