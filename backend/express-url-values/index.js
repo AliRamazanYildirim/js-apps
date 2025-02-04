@@ -5,6 +5,7 @@ import logger from './middleware/logger.js';
 import cors from 'cors';
 import userRoutes from './routes/user.js';
 import config from './config/config.js';
+import errorHandler from './middleware/errorHandler.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -21,10 +22,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // Statische Dateien
 app.use('/', userRoutes);
 
 // Error Handling Middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
+app.use(errorHandler);
 
 app.listen(config.port, () => {
     console.log(`Server is running on http://localhost:${config.port}`);
