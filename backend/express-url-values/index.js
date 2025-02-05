@@ -19,6 +19,6 @@ app.use('/', userRoutes);
 // Error Handling Middleware
 app.use(errorHandler);
 
-app.listen(config.port, () => {
-    console.log(`Server is running on http://localhost:${config.port}`);
+app.listen(process.env.PORT || config.port, () => {
+    console.log(`Server is running on http://localhost:${process.env.PORT || config.port}`);
 });

@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
     res.send('Willkommen zur Startseite!');
 });
 
+// Login Route
+router.post('/login', (req, res) => {
+    // Login logic here
+    res.send('Login route');
+});
+
+// Register Route
+router.post('/register', (req, res) => {
+    // Register logic here
+    res.send('Register route');
+});
+
 // Alle Benutzer anzeigen Route
 router.get('/users', (req, res) => {
     res.json(users);
@@ -49,9 +61,9 @@ router.put('/users/:id', (req, res) => {
 // Benutzer löschen Route
 router.delete('/users/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const userIndex = users.findIndex(user => user.id === id);
-    if (userIndex !== -1) {
-        users.splice(userIndex, 1);
+    const user = users.find(user => user.id === id);
+    if (user) {
+        users = users.filter(user => user.id !== id);
         res.json({
             message: `Benutzer mit ID ${id} wurde gelöscht`
         });
