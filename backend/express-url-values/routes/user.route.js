@@ -8,11 +8,6 @@ const users = [
     { id: 3, username: 'user3', email: 'user3@example.com' }
 ];
 
-// Root Route
-router.get('/', (req, res) => {
-    res.send('Willkommen zur Startseite!');
-});
-
 // Login Route
 router.post('/login', (req, res) => {
     // Login logic here

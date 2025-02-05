@@ -13,6 +13,11 @@ const __dirname = path.dirname(__filename);
 // Middleware
 applyMiddleware(app);
 
+// Root Route
+app.get('/', (req, res) => {
+    res.send('Willkommen zur Startseite!');
+});
+
 // Routes
 app.use('/', userRoutes);
 
