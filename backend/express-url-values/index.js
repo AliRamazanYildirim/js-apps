@@ -1,10 +1,10 @@
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import userRoutes from './routes/user.route.js';
-import config from './config/config.js';
-import errorHandler from './middleware/errorHandler.js';
-import applyMiddleware from './middleware/app.js';
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import userRoutes from "./routes/user.route.js";
+import config from "./config/config.js";
+import errorHandler from "./middleware/errorHandler.js";
+import applyMiddleware from "./middleware/app.js";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -14,16 +14,26 @@ const __dirname = path.dirname(__filename);
 applyMiddleware(app);
 
 // Root Route
-app.get('/', (req, res) => {
-    res.send('Willkommen zur Startseite!');
+app.get("/", (req, res) => {
+  res.send("Willkommen zur Startseite!");
+});
+
+// Health Route
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
 // Routes
-app.use('/', userRoutes);
+app.use("/", userRoutes);
 
 // Error Handling Middleware
 app.use(errorHandler);
 
-app.listen(process.env.PORT || config.port, () => {
-    console.log(`Server is running on http://localhost:${process.env.PORT || config.port}`);
+const PORT = config.port;
+app.listen(PORT, () => {
+  if (config.nodeEnv === "development") {
+    console.log(`Server is running on http://localhost:${PORT}`.cyan.bold);
+  } else {
+    console.log(`Server is running on http://localhost:${PORT}`.green.bold);
+  }
 });
