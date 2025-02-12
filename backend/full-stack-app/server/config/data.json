@@ -1,1 +1,16 @@
-{"books": [], "authors": [], "users": []}
+{
+  "books": [],
+  "authors": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "Kilic",
+      "email": "kilic@example.com"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    }
+  ]
+}

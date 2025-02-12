@@ -37,7 +37,7 @@ const Form = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Add Member</button>
+        <button type="submit">Add User</button>
         <div>
           <h2>Book</h2>
           <label htmlFor="name">Name:</label>
@@ -49,7 +49,7 @@ const Form = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Add Member</button>
+        <button type="submit">Add Book</button>
       </form>
     </>
   );
