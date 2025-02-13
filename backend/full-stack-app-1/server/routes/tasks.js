@@ -37,6 +37,15 @@ tasksRouter.get("/", (req, res) => {
     console.error("Error deleting task:", error);
     res.status(500).json({ msg: "Server error" });
   }
+})
+.delete("/", async (req, res) => {
+  try {
+    await fs.promises.writeFile("./data.json", JSON.stringify([], null, 2));
+    res.status(200).json({ msg: "All tasks deleted" });
+  } catch (error) {
+    console.error("Error deleting all tasks:", error);
+    res.status(500).json({ msg: "Server error" });
+  }
 });
 
 export { tasksRouter };

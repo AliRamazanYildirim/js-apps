@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 import ListItem from './components/ListItem';
-import { API_URL } from './config';
-const BASE_URL = API_URL; // Hier steht die Backend-URL
+import { API_URL as BASE_URL } from './config';
 
 function App() {
   const [task, setTask] = useState("");
