@@ -26,6 +26,23 @@ tasksRouter.get("/", (req, res) => {
     res.status(500).json({ msg: "Server error" });
   }
 })
+.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { task } = req.body;
+    let data = JSON.parse(await fs.promises.readFile("./data.json", "utf8"));
+    const taskIndex = data.findIndex(t => t.id === id);
+    if (taskIndex === -1) {
+      return res.status(404).json({ msg: "Task not found" });
+    }
+    data[taskIndex].task = task;
+    await fs.promises.writeFile("./data.json", JSON.stringify(data, null, 2));
+    res.status(200).json(data[taskIndex]);
+  } catch (error) {
+    console.error("Error updating task:", error);
+    res.status(500).json({ msg: "Server error" });
+  }
+})
 .delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
