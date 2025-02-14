@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { tasksRouter } from './routes/tasks.js';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
 // Manuell __filename und __dirname definieren
 const __filename = fileURLToPath(import.meta.url);
@@ -19,6 +19,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Der Server hört auf Port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
