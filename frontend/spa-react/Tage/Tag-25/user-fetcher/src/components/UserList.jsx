@@ -1,44 +1,27 @@
-import { useEffect, useState } from "react";
-import axios from 'axios';
+import { useEffect } from "react";
+import useUserStore from "../store/useUserStore";
 import SingleUser from "./SingleUser";
 
-
 const UserList = () => {
-    const [users, setUsers] = useState([])
-    const [loading, setLoading] = useState(false)
-    const url = 'https://randomuser.me/api/?results=10'
+  const { users, loading, fetchUsers } = useUserStore();
 
-    const fetchUsers = async () => {
-        try {
-            const res = await axios.get(url);
-            console.log(res);
-            setUsers(res.data.results);
-        } catch (error) {
-            console.error("Error fetching users:", error);
-        } finally {
-            setLoading(false);
-        }
-    }
+  useEffect(() => {
+    fetchUsers();
+  }, [fetchUsers]);
 
-    useEffect(() => {
-        fetchUsers();
-    }, []);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
-    return (
-        <div className="user-list">
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <ul>
-                    {users.map((user) => (
-                        <li key={user.login.uuid}>
-                            <SingleUser user={user} />
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
-    )
-}
+  if (!users || users.length === 0) {
+    return <p>No users found</p>;
+  }
+
+  return (
+    <div>
+        <SingleUser />
+    </div>
+  );
+};
 
 export default UserList;
