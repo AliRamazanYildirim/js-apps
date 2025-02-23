@@ -25,7 +25,7 @@ h1 {
   width: 100vw;
   color: #213547;
   height: 5rem;
-  padding: 0.5em;
+  padding-bottom: 50px;
   background-color:bisque;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -34,10 +34,11 @@ h1 {
 }
 
 .user-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  justify-content: center;
 }
 
 .single-user {
@@ -46,10 +47,14 @@ h1 {
   background-color: antiquewhite;
   align-items: center;
   padding: 20px;
-  color:213547;
+  color: #213547;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 200px;
+  height: 300px;
+  flex: 1 1 calc(20% - 40px); /* 5 items per row */
+  margin: 10px;
 }
 
 .single-user img {
