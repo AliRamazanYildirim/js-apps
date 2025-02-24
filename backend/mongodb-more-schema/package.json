@@ -1,5 +1,5 @@
 {
-  "name": "mongodb-more-schema-subdocument",
+  "name": "mongodb-more-schema",
   "module": "index.js",
   "type": "module",
   "scripts": {
