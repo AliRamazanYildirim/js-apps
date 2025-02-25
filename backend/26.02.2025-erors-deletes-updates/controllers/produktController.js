@@ -64,8 +64,11 @@ export const restoreProduct = async (req, res , next) => {
     try {
         const {id} = req.params;
         const product = await Product.findById(id);
-        if(!product.deletedAt){
+        if(!product){
             return res.status(404).json({message: 'Produkt wurde nicht gefunden'})
+        }
+        if(!product.deletedAt){
+            return res.status(400).json({message: 'Produkt ist nicht soft gelöscht'})
         }
         await product.restore();
         res.status(200).json({message: 'Produkt wurde widerhergestellt!'})

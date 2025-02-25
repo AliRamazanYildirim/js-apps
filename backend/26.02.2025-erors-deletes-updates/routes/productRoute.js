@@ -9,6 +9,6 @@ productRouter.post('/', product.createProduct)
 .put('/:id', product.replaceProduct)
 .patch('/:id', product.updateProduct)
 .patch('/restore/:id', product.restoreProduct)
-.delete('/id', product.softDeleteProduct)
+.delete('/:id', product.softDeleteProduct)
 
 export default productRouter;
