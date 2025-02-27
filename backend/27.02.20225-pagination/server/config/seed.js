@@ -17,7 +17,7 @@ const seedDatabase = async () => {
         const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
         const productsToCreate = Array.from({ length: 100 }, (_, index) => ({
-            name: `${brand} ${index + 1}`,
+            name: `Product ${index + 1}`,
             price: Math.floor(Math.random() * 999) + 1,
             color: getRandomElement(color),
             size: getRandomElement(size),
