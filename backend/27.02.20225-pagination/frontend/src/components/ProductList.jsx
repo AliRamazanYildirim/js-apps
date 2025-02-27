@@ -27,12 +27,12 @@ const ProductList = () => {
     fetchProducts();
   }, [currentPage, setProducts, setTotalPages, apiUrl, search]);
 
-  useEffect(() => {
-    setSearch(searchInput);
-  }, [searchInput, setSearch]);
-
   const handleSearchInputChange = (event) => {
     setSearchInput(event.target.value);
+  };
+
+  const handleSearch = () => {
+    setSearch(searchInput);
   };
 
   return (
@@ -43,6 +43,7 @@ const ProductList = () => {
         value={searchInput}
         onChange={handleSearchInputChange}
       />
+      <button onClick={handleSearch}>Search</button>
       <ul>
         {products && products.length > 0 ? (
           products.map((product) => (
