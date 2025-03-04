@@ -50,6 +50,26 @@ const userSchema = new Schema({
       message: (props) => `Das Passwort muss mindestens 6 Zeichen lang sein`,
     },
   },
+  website: {
+    type: String,
+    trim: true,
+    set: escapeHtml,
+    validate: {
+      validator: function (v) {
+        return /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(v); // A valid URL format
+      },
+      message: (props) => `${props.value} ist keine gültige URL!`,
+    },
+    location:{
+        type: {
+            type: String,
+            enum: {
+                values: ['Türkei', 'Deutschland', 'Frankreich', 'Italien'],
+                message: '{VALUE} ist keine gültige Location',
+            },
+        }
+    }
+  },
 });
 
 userSchema.pre('save', async function (next) {
