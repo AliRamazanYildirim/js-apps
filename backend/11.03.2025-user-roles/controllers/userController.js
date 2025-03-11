@@ -1,4 +1,5 @@
 import User from '../models/user.js';
+import { generateToken } from '../middleware/jwt.js';
 
 // Einen neuen User erstellen
 export const createUser = async (req, res) => {
@@ -94,7 +95,18 @@ export const userLogin = async (req, res) => {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
 
-        res.status(200).json({ message: 'Login successful', user });
+        const token = generateToken({ id: user._id, email: user.email, roles: user.roles });
+        res.status(200).json({ message: 'Login successful', token });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// Dashboard-Funktion
+export const dashboard = async (req, res) => {
+    try {
+        const user = req.user;
+        res.status(200).json({ message: `Hallo ${user.name}, willkommen auf unserer Seite` });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

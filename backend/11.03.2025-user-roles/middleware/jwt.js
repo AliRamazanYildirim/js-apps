@@ -14,11 +14,13 @@ export const verifyToken = (token) => {
 
 // Middleware zum Authentifizieren des Tokens
 export const authenticate = (req, res, next) => {
-    const token = req.header('Authorization')?.replace('Bearer ', '');
+    const authHeader = req.header('Authorization');
 
-    if (!token) {
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return res.status(401).json({ message: 'Access denied. No token provided.' });
     }
+
+    const token = authHeader.replace('Bearer ', '');
 
     try {
         const decoded = verifyToken(token);
