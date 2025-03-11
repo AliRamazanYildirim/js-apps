@@ -105,8 +105,8 @@ export const userLogin = async (req, res) => {
 // Dashboard-Funktion
 export const dashboard = async (req, res) => {
     try {
-        const user = req.user;
-        res.status(200).json({ message: `Hallo ${user.name}, willkommen auf unserer Seite` });
+        const { name } = req.user;
+        res.status(200).json({ message: `Hallo ${name}, willkommen auf unserer Seite` });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
