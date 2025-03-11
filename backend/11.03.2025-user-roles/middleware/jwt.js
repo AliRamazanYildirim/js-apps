@@ -11,3 +11,20 @@ export const generateToken = (payload) => {
 export const verifyToken = (token) => {
     return jwt.verify(token, JWT_SECRET);
 };
+
+// Middleware zum Authentifizieren des Tokens
+export const authenticate = (req, res, next) => {
+    const token = req.header('Authorization')?.replace('Bearer ', '');
+
+    if (!token) {
+        return res.status(401).json({ message: 'Access denied. No token provided.' });
+    }
+
+    try {
+        const decoded = verifyToken(token);
+        req.user = decoded;
+        next();
+    } catch (error) {
+        res.status(400).json({ message: 'Invalid token.' });
+    }
+};
