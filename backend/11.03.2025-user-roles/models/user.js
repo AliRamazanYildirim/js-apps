@@ -33,13 +33,19 @@ userSchema.pre('save', async function (next) {
       return next();
     }
     try {
-      const salt = await bcrypt.genSalt(10);
-      this.password = await bcrypt.hash(this.password, salt);
+      const hash = await bcrypt.hash(this.password, 12);
+        this.password = hash;
       next();
     } catch (error) {
       next(error);
     }
   });
+
+  // Schema-Methode zum Vergleichen von Passwörtern
+userSchema.methods.authenticate = async function (password) {
+    return await bcrypt.compare(password, this.password);
+  };
+  
 
 const User = model("User", userSchema);
 
