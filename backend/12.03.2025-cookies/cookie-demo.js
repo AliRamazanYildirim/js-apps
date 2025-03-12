@@ -32,6 +32,7 @@ app.get("/lamecookie", (req, res)=>{
     res.send("Lamecookie wurde gesetzt!");
 });
 
+// MaxAge in Millisekunden
 app.get("/shortcookie", (req, res)=>{
     res.cookie("shortcookie", "short", {maxAge:10000});
     res.send("Shortcookie wurde gesetzt!");
