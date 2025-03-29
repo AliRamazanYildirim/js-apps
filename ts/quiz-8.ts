@@ -1,0 +1,11 @@
+/* console.log(x); // Error: The variable 'x' must be defined before it can be used.
+let x: string = "hi";
+console.log(x); */
+
+//Solution
+
+let y: string;
+console.log(y); // Error: The variable 'y' must be defined before it can be used.
+y = "hi";
+console.log(y); // Output: hi
+// The variable 'y' must be defined before it can be used.
