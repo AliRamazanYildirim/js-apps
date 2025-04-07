@@ -2,9 +2,11 @@ const obj = {name: "quiz-31", type: "quiz", title: "Quiz 31", description: "Quiz
 
 const keysArray = Object.keys(obj);
 const valuesArray = Object.values(obj);
+const entriesArray = Object.entries(obj);
 
 console.log("Keys Array:", keysArray);
 console.log("Values Array:", valuesArray);
+console.log("Entries Array:", entriesArray);
 
 //Erklärung:
 
