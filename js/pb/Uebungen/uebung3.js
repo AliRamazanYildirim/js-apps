@@ -91,11 +91,12 @@ console.log(double(3)); //6
 function memoize(fn) {
     const cache = {};
     return function(...args) {
-        if (cache[args]) {
-            return cache[args];
+        const key = args.join(',');
+        if (key in cache) {
+            return cache[key];
         }
         const result = fn(...args);
-        cache[args] = result;
+        cache[key] = result;
         return result;
     }
 }
@@ -111,6 +112,11 @@ function factorial(n) {
     return n * factorial(n - 1);
 }
 console.log(factorial(5)); //120
+
+//! memoized factorial
+const memoizedFactorial = memoize(factorial);
+console.log(memoizedFactorial(5)); //120 (cached after first call)
+console.log(memoizedFactorial(6)); //720 (reuses cached values)
 
 //! tail recursion
 function factorial1(n, result = 1) {
