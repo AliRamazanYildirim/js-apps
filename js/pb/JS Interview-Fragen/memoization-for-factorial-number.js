@@ -1,5 +1,15 @@
 // Memoized Factorial Implementation
 // How to use Memoization for N-th Factorial number
+//
+// This file demonstrates three different approaches to implement memoization for factorial calculation:
+// 1. Cache parameter method - Pass cache as parameter (similar to Fibonacci implementation)
+// 2. Closure-based method - Use closure to maintain private cache
+// 3. General memoize function - Use higher-order function to memoize any function
+//
+// Benefits of memoization for factorial:
+// - Avoids recalculating same values
+// - Significant performance improvement for repeated calls
+// - Especially useful when calculating multiple factorials or factorial sequences
 
 // Method 1: Using cache parameter (similar to Fibonacci example)
 const factorialMemo = (n, cache = {}) => {
